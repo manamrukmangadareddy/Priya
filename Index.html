@@ -14,14 +14,30 @@
       overflow: hidden;
     }
 
-    /* 💞 Zig‑zag diagonal watermark background */
+    /* 💞 Full-page zigzag watermark background */
     body::before {
-      content: "I LOVE YOU PRIYA  I LOVE YOU PRIYA  I LOVE YOU PRIYA  I LOVE YOU PRIYA  I LOVE YOU PRIYA";
+      content: "";
       position: fixed;
-      top: -200px;
-      left: -200px;
-      width: 200%;
-      height: 200%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        repeating-linear-gradient(
+          -35deg,
+          rgba(255, 0, 0, 0.08) 0 60px,
+          transparent 60px 120px
+        );
+      z-index: -2;
+    }
+
+    body::after {
+      content: "I LOVE YOU PRIYA I LOVE YOU PRIYA I LOVE YOU PRIYA I LOVE YOU PRIYA I LOVE YOU PRIYA I LOVE YOU PRIYA I LOVE YOU PRIYA I LOVE YOU PRIYA I LOVE YOU PRIYA I LOVE YOU PRIYA";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       font-size: 60px;
       font-style: italic;
       color: rgba(255, 0, 0, 0.08);
@@ -30,6 +46,7 @@
       line-height: 1.8em;
       z-index: -1;
       pointer-events: none;
+      white-space: pre-wrap;
     }
 
     h1 {
@@ -95,7 +112,6 @@
   <h1>I ❤️ YOU PRIYA</h1>
 
   <div class="content">
-    <!-- 💌 Your heartfelt message -->
     Youre resistance is like gravity. Nee vyapukee gunjesthundii....
     Ninnu chudage nachavv..
     neetho mataladinapudu nee character, caring, understanding Inka nachavv..
@@ -108,7 +124,6 @@
     I love you Priya ❤️
   </div>
 
-  <!-- 💖 Question section above response -->
   <div class="question">
     Do you love me? 💖
     <div class="options">
@@ -132,11 +147,3 @@
 
     function loveYes() {
       alert("Love you toooo Priyaaa‑Pellama‑Madam 💕");
-    }
-
-    function loveNo() {
-      alert("Oh nooo 😢 But I’ll keep loving you anyway!");
-    }
-  </script>
-</body>
-</html>
